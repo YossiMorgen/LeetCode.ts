@@ -1,5 +1,3 @@
-import maxArea from "./arrays/medum/11. Container With Most Water";
+import validParentheses from "./stacks/easy/valid_parentheses";
 
-const array = [3, 4, 5, 6, 5];
-
-console.log(maxArea(array));
+console.log(validParentheses("()}[]"));
