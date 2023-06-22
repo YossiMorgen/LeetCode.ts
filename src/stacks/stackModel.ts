@@ -3,7 +3,7 @@ export default class SimpleStack {
     private headIndex = -1;
 
     public constructor(capacity: number){
-        this.stack = Array(capacity);
+        this.stack = new Array(capacity);
     }
 
     public push(val: any){
@@ -32,7 +32,13 @@ export default class SimpleStack {
 
     public printAll(){
         for(let i = 0; i <= this.headIndex; i++){
-            
+            console.log(this.stack[this.headIndex]);
+        }
+    }
+
+    public clearStack(){
+        while(this.headIndex > -1){
+            this.pop();
         }
     }
 }

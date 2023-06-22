@@ -1,3 +1,3 @@
-import validParentheses from "./stacks/easy/valid_parentheses";
+import longestValidParentheses from "./stacks/Hard/longest-valid-parentheses";
 
-console.log(validParentheses("()}[]"));
+console.log(longestValidParentheses(")()())"));

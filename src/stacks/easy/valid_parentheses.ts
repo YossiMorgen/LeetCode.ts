@@ -1,8 +1,8 @@
-import SimpleStack from "./stackModel";
+import SimpleStack from "../stackModel";
 
 export default function validParentheses(s: string){
     
-    const stack = new SimpleStack(10);
+    const stack = new SimpleStack(Math.floor(s.length / 2));
     let bool = true;
 
     for(let i = 0; i < s.length; i++){
@@ -16,7 +16,6 @@ export default function validParentheses(s: string){
             break;
         }
         stack.push(val)
-        
     }
 
     if(stack.peek()) bool = false;
