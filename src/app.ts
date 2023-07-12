@@ -1,3 +1,8 @@
-import runMerge from "./arrays/easy/merge-sorted-array";
+import removeElement from "./arrays/easy/Remove Element";
 
-runMerge();
+const arr = [3,2,2,3];
+
+const val = removeElement(arr, 3);
+
+console.log(val);
+console.log(arr);
