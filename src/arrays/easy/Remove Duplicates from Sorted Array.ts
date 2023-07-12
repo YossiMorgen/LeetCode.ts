@@ -4,7 +4,6 @@ function removeDuplicates(nums: number[]): number {
         
         if(nums[index] == nums[count]){
             delete nums[index];
-            continue;
         } else{
             count ++;
             if(index > count){

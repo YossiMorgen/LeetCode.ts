@@ -1,6 +1,4 @@
-import removeDuplicates from "./arrays/easy/Remove Duplicates from Sorted Array";
+import majorityElement from "./arrays/easy/Majority Element";
 
-const arr = [1,2];
-console.log(removeDuplicates(arr));
-
-console.log(arr);
+const arr = [2,2,1,1,1,2,2];
+console.log(majorityElement(arr));
