@@ -1,8 +1,6 @@
-import removeElement from "./arrays/easy/Remove Element";
+import removeDuplicates from "./arrays/easy/Remove Duplicates from Sorted Array";
 
-const arr = [3,2,2,3];
+const arr = [1,2];
+console.log(removeDuplicates(arr));
 
-const val = removeElement(arr, 3);
-
-console.log(val);
 console.log(arr);
