@@ -1,15 +1,15 @@
 function majorityElement(nums: number[]): number {
     nums.sort()
-    let count = 1
-    console.log(nums);
-    for (let index = 0; index < nums.length; index++) {
+    let count = 0
+
+    for (let index = 1; index < nums.length; index++) {
         if(nums[index] == nums[index - 1]){
             count ++
         } else {
-            count = 1
+            count = index
         }
 
-        if(count >= (nums.length / 2)){
+        if((index - count) >= (nums.length / 2)){
             return nums[index];
         }
     }
