@@ -1,3 +1,3 @@
-import longestValidParentheses from "./stacks/Hard/longest-valid-parentheses";
+import runMerge from "./arrays/easy/merge-sorted-array";
 
-console.log(longestValidParentheses(")()())"));
+runMerge();

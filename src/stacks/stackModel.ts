@@ -1,5 +1,5 @@
 export default class SimpleStack {
-    private stack: any;
+    stack: any;
     private headIndex = -1;
 
     public constructor(capacity: number){
