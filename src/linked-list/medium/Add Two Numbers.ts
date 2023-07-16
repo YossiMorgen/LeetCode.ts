@@ -48,3 +48,11 @@ function recursion(l1: ListNode | null, l2: ListNode | null, l3: ListNode | null
         l3.next = new ListNode(1)
     }
 }
+
+// // implementation
+// const ln = new ListNode(0);
+
+// const ln2 = new ListNode(0);
+
+// const l3 = addTwoNumbers(ln, ln2)
+// l3.print()

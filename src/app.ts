@@ -1,12 +1,8 @@
-import { ListNode, addTwoNumbers } from "./linked-list/medium/Add Two Numbers";
+import lengthOfLongestSubstring from "./strings/medium/Longest Substring Without Repeating Characters";
 
 const date = new Date().getTime()
 
-const ln = new ListNode(0);
+console.log(lengthOfLongestSubstring('a'));
 
-const ln2 = new ListNode(0);
 
-const l3 = addTwoNumbers(ln, ln2)
-l3.print()
-
-// console.log(new Date().getTime() - date);
+console.log("time complexity: " + (new Date().getTime() - date));
