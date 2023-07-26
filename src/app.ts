@@ -1,8 +1,8 @@
-import lengthOfLongestSubstring from "./strings/medium/Longest Substring Without Repeating Characters";
+import longestPalindrome from "./strings/medium/Longest Palindromic Substring";
 
 const date = new Date().getTime()
 
-console.log(lengthOfLongestSubstring('a'));
+console.log(longestPalindrome('babab'));
 
 
 console.log("time complexity: " + (new Date().getTime() - date));

@@ -1,6 +1,9 @@
 export default function lengthOfLongestSubstring(str: string): number {
     let max = 0;
-    let start = 0;    
+    let start = 0;  
+
+    // if(!str) return 0
+
 
     for(let i = 1; i < str.length; i++){        
         for (let j = i - 1; j >= start; j--){
