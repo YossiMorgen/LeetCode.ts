@@ -1,8 +1,8 @@
 import minSubArrayLen from "./arrays/medium/Minimum Size Subarray Sum";
-import convert from "./strings/medium/Zigzag Conversion";
+import reverse from "./integers/medium/Reverse Integer";
 
 const date = new Date().getTime()
 
-console.log(minSubArrayLen(4, [1]));
+console.log(reverse(123));
 
 console.log("time complexity: " + (new Date().getTime() - date));
