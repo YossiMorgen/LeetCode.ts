@@ -1,9 +1,7 @@
-import asteroidCollision from "./stacks/medium/AsteroidCollision";
-import minSubArrayLen from "./arrays/medium/Minimum Size Subarray Sum";
-import reverse from "./integers/medium/Reverse Integer";
+import canFinish from "./graphs/medium/Course Schedule";
 
 const date = new Date().getTime()
 
-console.log(asteroidCollision([5, 10, -5]));
+console.log(canFinish(2, [[1,0],[0,1]]));
 
 console.log("time complexity: " + (new Date().getTime() - date));
