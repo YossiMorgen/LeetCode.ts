@@ -1,48 +1,46 @@
 export default function canFinish(numCourses: number, prerequisites: number[][]): boolean {
-    const graph: number[][] = [];
-    const visited: boolean[] = [];
-    const visiting: boolean[] = [];
-    
-    for (let i = 0; i < numCourses; i++) {
-        graph.push([]);
-        visited.push(false);
-        visiting.push(false);
+    const graph: Array<Array<number>> = new Array(numCourses);
+    const visited: boolean[] = new Array(numCourses)
+    const visiting: boolean[] = new Array(numCourses)
+
+    for(let i = 0; i < numCourses; i++){
+        graph[i] = [];
+        visited[i] = false
+        visiting[i] = false
+    }
+
+    for(let i = 0; i < prerequisites.length; i++){
+        const node = prerequisites[i]
+        graph[node[0]][0] = i;
+        graph[node[0]][1] = node[1];
+        
     }
     
-    for (let i = 0; i < prerequisites.length; i++) {
-        graph[prerequisites[i][0]].push(prerequisites[i][1]);        
-    }
-    
-    for (let i = 0; i < numCourses; i++) {
-        if (!visited[i]) {
-            if (hasCycle(graph, visited, visiting, i)) {
-                return false;
-            }
+    for(let i = 0; i < numCourses - 1; i++){
+        if(hasCycle(graph, visited, visiting, i)){
+            return false;
         }
     }
-    
+
     return true;
 };
 
 function hasCycle(graph: number[][], visited: boolean[], visiting: boolean[], node: number): boolean {
-    if (visited[node]) {
+    if(visited[node]){
         return false;
     }
-    
-    if (visiting[node]) {
-        return true;
-    }
-    
-    visiting[node] = true;
 
-    for (let i = 0; i < graph[node].length; i++) {
-        if (hasCycle(graph, visited, visiting, graph[node][i])) {
-            return true;
+    if(visiting[node]){
+        return true
+    }
+    visiting[node] = true
+    
+    for(const neighbor of graph[node]){
+        if(hasCycle(graph, visited, visiting, neighbor)){
+            return true
         }
     }
-    
-    visiting[node] = false;
+
     visited[node] = true;
-    
-    return false;
 }
+
