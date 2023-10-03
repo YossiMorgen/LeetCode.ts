@@ -1,8 +1,8 @@
-import canFinish from "./graphs/medium/Course Schedule";
-import myAtoi from "./strings/medium/String to Integer (atoi)";
+import { numIdenticalPairs } from "./arrays/easy/goodPairs";
 
 const date = new Date().getTime()
 
-console.log(myAtoi.myAtoi(" -42"));
+const array = [1,1,1,1]
+console.log(numIdenticalPairs(array));
 
 console.log("time complexity: " + (new Date().getTime() - date));
