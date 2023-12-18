@@ -1,8 +1,54 @@
 export function addOperators(num: string, target: number): string[] {
-
-    return ['']
+    return recursion(num, num[0], 1, target);
 }
-//     export function addOperators(num: string, target: number): string[] {
+
+function recursion(num: string, currentString: string, index: number, target: number): string[]{
+    if( index == num.length ){
+        if( target == eval(currentString) ){
+            return [currentString];
+        } else {
+            return [];
+        }
+    }
+    const array = [ 
+        ...tryMultiply(num, currentString, index, target), 
+        ...tryPlus(num, currentString, index, target), 
+        ...tryMinus(num, currentString, index, target),
+        ...tryConnect(num, currentString, index, target)
+    ];
+    
+    return array
+}
+
+function tryPlus(num: string, currentString: string, index: number, target: number): string[]{
+    const currentNum = num[index];
+    const newString = currentString + '+' + currentNum;
+    return recursion(num, newString, index+1, target);
+}
+
+function tryMultiply(num: string, currentString: string, index: number, target: number): string[]{
+    const currentNum = num[index];
+    const newString = currentString + '*' + currentNum;
+    return recursion(num, newString, index+1, target);
+}
+
+function tryMinus(num: string, currentString: string, index: number, target: number): string[]{
+    const currentNum = num[index];
+    const newString = currentString + '-' + currentNum;
+    return recursion(num, newString, index+1, target);
+}
+
+function tryConnect(num: string, currentString: string, index: number, target: number): string[]{
+    const currentNum = num[index];
+    const c = currentString[currentString.length-2]
+    if(currentString[currentString.length-1] == '0' && !(c >= '0' && c <= '9')) return [];
+    const newString = currentString + '' + currentNum;
+    return recursion(num, newString, index+1, target);
+}
+
+
+// this one doesn't have order of operations
+// export function addOperators(num: string, target: number): string[] {
 //     const numArray = num.split('').map((value) => parseInt(value));
 //     const currentValue = numArray.shift();
 //     return recursive(numArray, currentValue+'', currentValue, target);
