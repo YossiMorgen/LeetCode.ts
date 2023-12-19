@@ -20,6 +20,12 @@ function recursion(num: string, currentString: string, index: number, target: nu
     return array
 }
 
+function tryAnything(num: string, target: number, currentString: string, index: number, operation: string): string[]{
+    const currentNum = num[index];
+    const newString = currentString + operation + currentNum;
+    return recursion(num, newString, index+1, target);
+}
+
 function tryPlus(num: string, currentString: string, index: number, target: number): string[]{
     const currentNum = num[index];
     const newString = currentString + '+' + currentNum;
@@ -42,7 +48,7 @@ function tryConnect(num: string, currentString: string, index: number, target: n
     const currentNum = num[index];
     const c = currentString[currentString.length-2]
     if(currentString[currentString.length-1] == '0' && !(c >= '0' && c <= '9')) return [];
-    const newString = currentString + '' + currentNum;
+    const newString = currentString + currentNum;
     return recursion(num, newString, index+1, target);
 }
 
