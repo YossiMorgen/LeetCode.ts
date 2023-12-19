@@ -1,8 +1,10 @@
-import { ListNode } from "./linked-list/medium/Add Two Numbers";
-import swapPairs from "./linked-list/medium/Swap Nodes in Pairs";
+import imageSmoother from "./arrays/easy/Image Smoother";
 
 const date = new Date().getTime()
 
-console.log(swapPairs(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))))));
+const matrix = [[100,200,100],[200,50,200],[100,200,100]];
+
+console.log(imageSmoother(matrix));
+
 
 console.log("time complexity: " + (new Date().getTime() - date));
